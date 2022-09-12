@@ -7,10 +7,11 @@ public class Account {
 
     private final OperationHistory operationHistory;
     private final Clock clock;
+    private final StatementPrinter printer;
 
-
-    public Account(Clock clock){
+    public Account( Clock clock,StatementPrinter printer){
         this.clock = clock;
+        this.printer = printer;
         operationHistory = new OperationHistory();
     }
 
@@ -33,5 +34,9 @@ public class Account {
                 .date(ZonedDateTime.now(clock)).build();
         operationHistory.addOperation(operation);
         return operationHistory.getBalance();
+    }
+
+    public void print(){
+        printer.print(operationHistory.getStatement());
     }
 }

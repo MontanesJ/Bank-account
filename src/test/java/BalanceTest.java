@@ -1,8 +1,6 @@
-import kata.Account;
 import kata.Amount;
 import kata.Balance;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -33,6 +31,5 @@ public class BalanceTest {
         balance = new Balance(BigDecimal.ZERO);
         boolean result = balance.hasEnough(ten);
         Assertions.assertFalse(result);
-
     }
 }

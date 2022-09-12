@@ -24,4 +24,18 @@ public class OperationHistory {
         return balance;
     }
 
+    public List<Statement> getStatement(){
+        List<Statement> statements= new ArrayList<>();
+        Balance balanceStatements = new Balance(BigDecimal.ZERO);
+        for(Operation operation : operations){
+            statements.add(Statement.builder()
+                    .amount(operation.getAmount())
+                    .date(operation.getDate())
+                    .type(operation.getType())
+                    .balance(operation.calcBalance(balanceStatements))
+                    .build());
+        }
+        return statements;
+    }
+
 }
