@@ -22,4 +22,13 @@ public class Account {
         operationHistory.addOperation(operation);
         return operationHistory.getBalance();
     }
+
+    public Balance withdrawal(Amount amount) {
+        Operation operation = Operation.builder()
+                .type(OperationType.WITHDRAWAL)
+                .amount(amount)
+                .date(ZonedDateTime.now(clock)).build();
+        operationHistory.addOperation(operation);
+        return operationHistory.getBalance();
+    }
 }

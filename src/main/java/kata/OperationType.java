@@ -4,7 +4,8 @@ import java.util.function.BiFunction;
 
 public enum OperationType {
 
-    DEPOSIT(Balance::add);
+    DEPOSIT(Balance::add),
+    WITHDRAWAL(Balance::subtract);
 
     private final BiFunction<Balance, Amount, Balance> operation;
     OperationType(BiFunction<Balance, Amount, Balance> operation) {

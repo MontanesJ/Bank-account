@@ -27,7 +27,7 @@ public class AccountTest {
         Account account = new Account(fixed);
         Balance expected = new Balance(BigDecimal.ZERO);
         account.deposit(ten);
-        Balance result = Account.withdrawal(ten);
+        Balance result = account.withdrawal(ten);
         Assertions.assertEquals(expected, result);
     }
 }
