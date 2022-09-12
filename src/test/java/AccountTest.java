@@ -21,5 +21,14 @@ public class AccountTest {
         Balance result = bankAccount.deposit(ten);
         Assertions.assertEquals(expected, result);
     }
+
+    @Test
+    public void when_we_deposit_10_and_withdrawal_10_whe_should_get_balance_0() {
+        Account account = new Account(fixed);
+        Balance expected = new Balance(BigDecimal.ZERO);
+        account.deposit(ten);
+        Balance result = Account.withdrawal(ten);
+        Assertions.assertEquals(expected, result);
+    }
 }
 
