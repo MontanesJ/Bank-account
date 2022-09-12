@@ -1,5 +1,5 @@
-import kata.Amount;
-import kata.Balance;
+package kata;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

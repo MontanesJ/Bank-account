@@ -1,5 +1,5 @@
-import kata.Statement;
-import kata.StatementPrinter;
+package kata;
+
 
 import java.util.ArrayList;
 import java.util.List;
