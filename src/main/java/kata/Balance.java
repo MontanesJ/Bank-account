@@ -14,6 +14,10 @@ public class Balance {
         return new Balance(balance.subtract(amount.getValue()));
     }
 
+    public boolean hasEnough(Amount amount){
+        return balance.subtract(amount.getValue()).compareTo(BigDecimal.ZERO) >= 0;
+    }
+
     public Balance(BigDecimal balance) {
         this.balance = balance;
     }

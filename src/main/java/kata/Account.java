@@ -24,6 +24,9 @@ public class Account {
     }
 
     public Balance withdrawal(Amount amount) {
+        if(!operationHistory.getBalance().hasEnough(amount)){
+            throw new IllegalArgumentException("not enough money");
+        }
         Operation operation = Operation.builder()
                 .type(OperationType.WITHDRAWAL)
                 .amount(amount)

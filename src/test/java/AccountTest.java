@@ -30,5 +30,11 @@ public class AccountTest {
         Balance result = account.withdrawal(ten);
         Assertions.assertEquals(expected, result);
     }
+
+    @Test
+    public void we_cant_withdrawal_10_from_an_empty_account() {
+        Account account = new Account(fixed);
+        Assertions.assertThrows(IllegalArgumentException.class, () ->  account.withdrawal(ten));
+    }
 }
 
